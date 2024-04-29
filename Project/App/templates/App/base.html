@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+    {% block style %}
+    {% endblock %}
+</head>
+
+
+<link rel="stylesheet" href="{% static 'css/styless.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<body id="bg" style="background-image: url('{% static "App/images/home-bg.jpg" %}')">
+
+<header>
+
+    <a href="#" class="logo"><span>Shristi</span>Investors</a>
+
+    <nav class="navbar">
+        <a href="{% url 'views.index' %}">home</a>
+        <a href="#services">services</a>
+        <a href="#featured">featured</a>
+        <a href="#agents">agents</a>
+        <a href="#contact"<img src="{% static 'App/images/img_1.png' %}" alt="img_1">contact</a>
+    </nav>
+
+    <div class="icons">
+        <div id="menu-bars" class="fas fa-bars"></div>
+        <a href="#" class="fas fa-heart"></a>
+        <a href="{% url 'user_register' %}" class="fas fa-user"></a>
+    </div>
+
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+</html>

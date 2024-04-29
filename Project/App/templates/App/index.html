@@ -1,0 +1,581 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+</head>
+
+
+<link rel="stylesheet" href="{% static 'css/styless.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<body id="bg" style="background-image: url('{% static "App/images/home-bg.jpg" %}')">
+
+<header>
+
+    <a href="#" class="logo"><span>Shristi</span>Investors</a>
+
+    <nav class="navbar">
+        <a href="{% url 'views.index' %}">home</a>
+        <a href="#services">services</a>
+        <a href="#featured">featured</a>
+        <a href="#agents">agents</a>
+        <a href="#contact"<img src="{% static 'App/images/img_1.png' %}" alt="img_1">contact</a>
+    </nav>
+
+    <div class="icons">
+        <div id="menu-bars" class="fas fa-bars"></div>
+        <a href="#" class="fas fa-heart"></a>
+        <a href="{% url 'user_register' %}" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+<section class="home" id="home">
+
+    <form action="{% url 'search_view' %}" method="get">
+
+        <h3>find your perfect home</h3>
+
+        <div class="buttons-container">
+            <a href="#" class="btn">for rent</a>
+        </div>
+
+        <div class="inputBox">
+            <select name="city" id="city">
+                <option value="" disabled hidden selected>City</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Guntur">Guntur</option>
+                <option value="Vishakapatnam">Vizag</option>
+                <option value="Tirupati">Tirupati</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value=" Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bhuvaneshwar">Bhuvaneshwar</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Delhi">Delhi</option>
+            </select>
+            <select name="bhk" id="bhk">
+                <option value="" disabled hidden selected>BHK</option>
+                <option value="1 BHK">1 BHK</option>
+                <option value="2 BHK">2 BHK</option>
+                <option value="3 BHK">3 BHK</option>
+                <option value="4 BHK">4 BHK</option>
+                <option value="5 BHK">5 BHK</option>
+            </select>
+            <select name="min_price" id="min_price">
+                <option value="" disabled hidden selected>Minimum price</option>
+                <option value="5000">5000</option>
+                <option value="10000">10000</option>
+                <option value="15000">15000</option>
+                <option value="20000">20000</option>
+                <option value="25000">25000</option>
+            </select>
+            <select name="max_price" id="max_price">
+                <option value="" disabled hidden selected>Maximum price</option>
+                <option value="30000">30000</option>
+                <option value="35000">35000</option>
+                <option value="40000">40000</option>
+                <option value="45000">45000</option>
+                <option value="50000">50000</option>
+            </select>
+            <select name="sq_ft" id="sq_ft">
+                <option value="" disabled hidden selected>Sq.ft</option>
+                <option value=" Less than 1000"> Less than 1000</option>
+                <option value=" 1000-2000 "> 1000-2000 </option>
+                <option value=" 2000-3000 "> 2000-3000 </option>
+                <option value=" 3000-4000 "> 3000-4000 </option>
+                <option value=" 4000-5000 "> 4000-5000 </option>
+            </select>
+             <select name="property_category" id="property_category">
+                <option value="" disabled hidden selected>Property Category</option>
+                <option value="Luxury Estates">Luxury Estates </option>
+                <option value="Oceanfront retreats">Oceanfront retreats </option>
+                <option value="Urban Living Gems"> Urban Living Gems </option>
+                <option value="Countryside Escapes"> Countryside Escapes </option>
+            </select>
+
+        <input type="submit" value="Search Property" class="btn">
+
+    </form>
+
+</section>
+
+
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static 'images/s-1.png' %}" alt="">
+            <h3>buying home</h3>
+            <p>Explore our range of homes available for purchase. Find your dream home today!</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'images/s-2.png' %}" alt="">
+            <h3>renting home</h3>
+            <p>Discover our selection of rental properties. Find the perfect space for you.</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'images/s-3.png' %}" alt="">
+            <h3>selling home</h3>
+            <p>Looking to sell your property? Explore about our selling process and services.</p>
+            <a href="{% url 'sell' %}" class="btn">Sell Property</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="featured" id="featured">
+
+    <h1 class="heading"> <span>featured</span> properties </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image-container">
+                <img src="{% static 'images/img-1.png' %}" alt="">
+                <div class="info">
+                    <h3>3 days ago</h3>
+                    <h3>for rent</h3>
+                </div>
+                <div class="icons">
+                    <a href="#" class="fas fa-film"><h3>1</h3></a>
+                    <a href="#" class="fas fa-camera"><h3>4</h3></a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="price">
+                    <h3>$25,000/mo</h3>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-envelope"></a>
+                    <a href="#" class="fas fa-phone"></a>
+                </div>
+                <div class="location">
+                    <h3>Modern Apartments</h3>
+                    <p>Jogeshwari west, Mumbai, India - 400104</p>
+                </div>
+                <div class="details">
+                    <h3> <i class="fas fa-expand"></i> 3500 sqft </h3>
+                    <h3> <i class="fas fa-bed"></i> 3 beds </h3>
+                    <h3> <i class="fas fa-bath"></i> 2 baths </h3>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn">request info</a>
+                    <a href="#" class="btn">view details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image-container">
+                <img src="{% static 'images/img-2.png' %}" alt="">
+                <div class="info">
+                    <h3>6 days ago</h3>
+                    <h3>for sale</h3>
+                </div>
+                <div class="icons">
+                    <a href="#" class="fas fa-film"><h3>2</h3></a>
+                    <a href="#" class="fas fa-camera"><h3>7</h3></a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="price">
+                    <h3>$40,000/mo</h3>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-envelope"></a>
+                    <a href="#" class="fas fa-phone"></a>
+                </div>
+                <div class="location">
+                    <h3>Hill Country</h3>
+                    <p>Vijayawada, Andhra Pradesh, India - 520001</p>
+                </div>
+                <div class="details">
+                    <h3> <i class="fas fa-expand"></i> 3500 sqft </h3>
+                    <h3> <i class="fas fa-bed"></i> 4 beds </h3>
+                    <h3> <i class="fas fa-bath"></i> 3 baths </h3>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn">request info</a>
+                    <a href="#" class="btn">view details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image-container">
+                <img src="{% static 'images/img-3.jpg' %}"alt="">
+                <div class="info">
+                    <h3>1 days ago</h3>
+                    <h3>for rent</h3>
+                </div>
+                <div class="icons">
+                    <a href="#" class="fas fa-film"><h3>1</h3></a>
+                    <a href="#" class="fas fa-camera"><h3>6</h3></a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="price">
+                    <h3>$20,000/mo</h3>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-envelope"></a>
+                    <a href="#" class="fas fa-phone"></a>
+                </div>
+                <div class="location">
+                    <h3>Cyber City</h3>
+                    <p>  Chennai, India - 600001</p>
+                </div>
+                <div class="details">
+                    <h3> <i class="fas fa-expand"></i> 3000 sqft </h3>
+                    <h3> <i class="fas fa-bed"></i> 2 beds </h3>
+                    <h3> <i class="fas fa-bath"></i> 2 baths </h3>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn">request info</a>
+                    <a href="#" class="btn">view details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image-container">
+                <img src="{% static 'images/img-4.jpg' %}" alt="">
+                <div class="info">
+                    <h3>9 days ago</h3>
+                    <h3>for rent</h3>
+                </div>
+                <div class="icons">
+                    <a href="#" class="fas fa-film"><h3>2</h3></a>
+                    <a href="#" class="fas fa-camera"><h3>6</h3></a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="price">
+                    <h3>$50,000/mo</h3>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-envelope"></a>
+                    <a href="#" class="fas fa-phone"></a>
+                </div>
+                <div class="location">
+                    <h3>Peace Meadows</h3>
+                    <p>Davis Rd, Bangalore, Karnataka, India - 400104</p>
+                </div>
+                <div class="details">
+                    <h3> <i class="fas fa-expand"></i> 4500 sqft </h3>
+                    <h3> <i class="fas fa-bed"></i> 4 beds </h3>
+                    <h3> <i class="fas fa-bath"></i> 4 baths </h3>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn">request info</a>
+                    <a href="#" class="btn">view details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image-container">
+                <img src="{% static 'images/img-5.jpg' %}" alt="">
+                <div class="info">
+                    <h3>10 days ago</h3>
+                    <h3>for sale</h3>
+                </div>
+                <div class="icons">
+                    <a href="#" class="fas fa-film"><h3>3</h3></a>
+                    <a href="#" class="fas fa-camera"><h3>8</h3></a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="price">
+                    <h3>$40,000/mo</h3>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-envelope"></a>
+                    <a href="#" class="fas fa-phone"></a>
+                </div>
+                <div class="location">
+                    <h3>Green Hills</h3>
+                    <p>Vishakapatnam, Andhra Pradesh, India - 530001</p>
+                </div>
+                <div class="details">
+                    <h3> <i class="fas fa-expand"></i> 3500 sqft </h3>
+                    <h3> <i class="fas fa-bed"></i> 4 beds </h3>
+                    <h3> <i class="fas fa-bath"></i> 3 baths </h3>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn">request info</a>
+                    <a href="#" class="btn">view details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image-container">
+                <img src="{% static 'images/img-6.jpg' %}" alt="">
+                <div class="info">
+                    <h3>3 days ago</h3>
+                    <h3>for sale</h3>
+                </div>
+                <div class="icons">
+                    <a href="#" class="fas fa-film"><h3>1</h3></a>
+                    <a href="#" class="fas fa-camera"><h3>4</h3></a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="price">
+                    <h3>$25,000/mo</h3>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-envelope"></a>
+                    <a href="#" class="fas fa-phone"></a>
+                </div>
+                <div class="location">
+                    <h3>Dream Homes</h3>
+                    <p>Hydershakote, Telangana, India - 500091</p>
+                </div>
+                <div class="details">
+                    <h3> <i class="fas fa-expand"></i> 4000 sqft </h3>
+                    <h3> <i class="fas fa-bed"></i> 3 beds </h3>
+                    <h3> <i class="fas fa-bath"></i> 3 baths </h3>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn">request info</a>
+                    <a href="#" class="btn">view details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- featured section ends -->
+
+<!-- agents section starts  -->
+
+<section class="agents" id="agents">
+
+    <h1 class="heading"> professional <span>agents</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="#" class="fas fa-envelope"></a>
+            <a href="#" class="fas fa-phone"></a>
+            <img src="{% static 'images/pic-1.png' %}" alt="">
+            <h3>john deo</h3>
+            <span>agent</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-envelope"></a>
+            <a href="#" class="fas fa-phone"></a>
+            <img src="{% static 'images/pic-2.png' %}" alt="">
+            <h3>john deo</h3>
+            <span>agent</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-envelope"></a>
+            <a href="#" class="fas fa-phone"></a>
+            <img src="{% static 'images/pic-3.png' %}" alt="">
+            <h3>john deo</h3>
+            <span>agent</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-envelope"></a>
+            <a href="#" class="fas fa-phone"></a>
+            <img src="{% static 'images/pic-4.png' %}" alt="">
+            <h3>john deo</h3>
+            <span>agent</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- agents section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+<h1 class="heading"> <span>contact</span> us </h1>
+
+<div class="icons-container">
+
+    <div class="icons">
+        <img src="{% static 'images/icon-1.png' %}" alt="">
+        <h3>phone number</h3>
+        <p>+91 9876545674</p>
+        <p>+91 7237987651</p>
+    </div>
+
+    <div class="icons">
+        <img src="{% static 'images/icon-2.png' %}" alt="">
+        <h3>email address</h3>
+        <p> shristiinvestors@gmail.com </p>
+        <p> shristi@gmail.com </p>
+    </div>
+
+     <div class="icons">
+        <img src="{% static 'images/icon-3.png' %}" alt="">
+        <h3>office address</h3>
+        <p>Jogeshwari, Mumbai, India - 520001</p>
+    </div>
+
+</div>
+
+<div class="row">
+    <form action="" onsubmit="return handleSubmit(event)">
+        <div class="inputBox">
+            <input type="text" placeholder="name" required>
+            <input type="number" placeholder="number" required>
+        </div>
+        <div class="inputBox">
+            <input type="email" placeholder="email" required>
+            <input type="text" placeholder="subject" required>
+        </div>
+        <textarea name="" placeholder="message" id="" cols="30" rows="10" required></textarea>
+        <input type="submit" value="send message" class="btn">
+    </form>
+    <div id="successMessage" style="display:none;">Message sent successfully!</div>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30153.788252261566!2d72.82321484621745!3d19.141690214227783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1626697480414!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevents the default form submission behavior
+
+        // Add your form submission logic here (e.g., sending data to server)
+
+        // Show success message
+        document.getElementById('successMessage').style.display = 'block';
+
+        // Reset the form
+        event.target.reset();
+
+        return false; // Prevents further propagation of the event
+    }
+</script>
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="footer-container">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>branch location</h3>
+                <a href="#">india</a>
+                <a href="#">USA</a>
+                <a href="#">france</a>
+                <a href="#">russia</a>
+                <a href="#">japan</a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#">home</a>
+                <a href="#">services</a>
+                <a href="#">featured</a>
+                <a href="#">agents</a>
+                <a href="#">contact</a>
+            </div>
+
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#">my account</a>
+                <a href="#">my favorite</a>
+                <a href="#">my list</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="facebook">facebook</a>
+                <a href="twitter">twitter</a>
+                <a href="instagram">instagram</a>
+                <a href="linkedin">linkedin</a>
+                <a href="youtube">youtube</a>
+            </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- javascript part  -->
+<script>
+
+let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+    navbar.classList.toggle('active');
+    menu.classList.toggle('fa-times');
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    menu.classList.remove('fa-times');
+}
+
+</script>
+
+</body>
+</html>
